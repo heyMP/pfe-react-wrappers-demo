@@ -1,7 +1,12 @@
+import * as React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { ButtomComponent } from './Button.js';
+import { SwitchComponent } from './Switch.js';
 
 function App() {
+  const [isWarning, setIsWarning] = React.useState(false);
+  const [isLarge, setIsLarge] = React.useState(false);
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +14,15 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <label>
+          isWarning
+          <SwitchComponent onChange={() => setIsWarning(!isWarning)}></SwitchComponent>
+        </label>
+        <label>
+          isLarge
+          <SwitchComponent onChange={() => setIsLarge(!isLarge)}></SwitchComponent>
+        </label>
+        <ButtomComponent warning={isWarning} size={isLarge ? 'large' : 'small'}>Click me</ButtomComponent>
       </header>
     </div>
   );
