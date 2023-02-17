@@ -1,7 +1,7 @@
 import * as React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { ButtomComponent } from './Button.js';
+import { ButtonComponent } from './Button.js';
 import { SwitchComponent } from './Switch.js';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           isLarge
           <SwitchComponent onChange={() => setIsLarge(!isLarge)}></SwitchComponent>
         </label>
-        <ButtomComponent warning={isWarning} size={isLarge ? 'large' : 'small'}>Click me</ButtomComponent>
+        <ButtonComponent warning={isWarning} size={isLarge ? 'large' : 'small'}>Click me</ButtonComponent>
       </header>
     </div>
   );
